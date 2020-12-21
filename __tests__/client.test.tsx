@@ -124,6 +124,43 @@ describe("login", () => {
   });
 });
 
+describe("login remember session", () => {
+  test("renders correctly", async () => {
+    await act(async () => {
+      const { getByText } = render(
+        <MockedProvider
+          mocks={[
+            {
+              request: {
+                query: CurrentUserDocument,
+              },
+              result: {
+                data: {
+                  currentUser: {
+                    user: null,
+                  },
+                },
+              },
+            },
+          ]}
+          addTypename={false}
+        >
+          <LoginPage />
+        </MockedProvider>
+      );
+
+      await waitForExpect(async () => {
+        const LoginRememberSession = getByText(
+          baseConfig.LOGIN_REMEMBER_SESSION
+        );
+
+        expect(LoginRememberSession).toBeTruthy();
+        expect(LoginRememberSession).not.toBeChecked();
+      });
+    });
+  });
+});
+
 describe("admin", () => {
   test("renders correctly", async () => {
     await act(async () => {
