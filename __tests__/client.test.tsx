@@ -124,6 +124,7 @@ describe("login", () => {
   });
 });
 
+// checkbox for remembering login session not checked by default
 describe("login remember session", () => {
   test("renders correctly", async () => {
     await act(async () => {
