@@ -11,7 +11,8 @@ services:
       DOMAIN: ${DOMAIN}
       SECRET: ${SECRET}
       COOKIE_SECRET: ${COOKIE_SECRET}
-      NODE_ENV: production
+      # NODE_ENV: production
+      NODE_ENV: test
       SENDGRID_API_KEY: ${SENDGRID_API_KEY}
       EMAIL_ADDRESS: ${EMAIL_ADDRESS}
       EMAIL_ADDRESS_NAME: ${EMAIL_ADDRESS_NAME}
