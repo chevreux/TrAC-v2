@@ -1,8 +1,23 @@
 FROM node:14-alpine
 
+RUN ls -a
+
 WORKDIR /home/trac
 
-COPY package.json yarn.lock /tmp/.env ./
+RUN ls -a
+
+COPY package.json yarn.lock ./
+# COPY package.json yarn.lock /tmp/.env ./
+
+RUN ls -a
+
+RUN cd /
+
+RUN ls -a
+
+RUN cd /tmp/
+
+RUN ls -a
 
 RUN yarn --frozen-lockfile
 
