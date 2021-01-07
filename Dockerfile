@@ -1,12 +1,14 @@
 FROM node:14-alpine
 
-RUN ls -a
-
-RUN cd home
+WORKDIR /
 
 RUN ls -a
 
-RUN cd /tmp
+WORKDIR /home
+
+RUN ls -a
+
+WORKDIR /tmp
 
 RUN ls -a
 
@@ -16,14 +18,6 @@ RUN ls -a
 
 COPY package.json yarn.lock ./
 # COPY package.json yarn.lock /tmp/.env ./
-
-RUN ls -a
-
-RUN cd /
-
-RUN ls -a
-
-RUN cd /tmp/
 
 RUN ls -a
 
