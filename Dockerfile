@@ -2,6 +2,14 @@ FROM node:14-alpine
 
 RUN ls -a
 
+RUN cd home
+
+RUN ls -a
+
+RUN cd /tmp
+
+RUN ls -a
+
 WORKDIR /home/trac
 
 RUN ls -a
